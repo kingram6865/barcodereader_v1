@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
 import { CameraView, Camera } from "expo-camera/next";
-import { BarCodeScanner } from 'expo-barcode-scanner';
+// import { BarCodeScanner } from 'expo-barcode-scanner';
 import { getBooksByISBN } from '../api/books';
 import { addToDatabase } from '../api/books';
 import { addFood } from '@/api/retail';
