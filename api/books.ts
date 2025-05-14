@@ -2,6 +2,7 @@ import axios from 'axios';
 // import api from '../utilities/api'
 
 export async function getBooksByISBN(isbn: any) {
+  console.log(isbn)
   try {
     const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}`)
     return await response.json()
@@ -12,6 +13,7 @@ export async function getBooksByISBN(isbn: any) {
 }
 
 export async function addToDatabase(data: Object) {
+  // console.log(data)
   try {
     // console.log(`\x1b[32m(books.ts) [Line 10]: ${process.env.EXPO_PUBLIC_BACKEND_BASE_URI}/library/paper\x1b[0m`, data)
     let results = await axios.post(`${process.env.EXPO_PUBLIC_BACKEND_BASE_URI}/library/paper`, data);
