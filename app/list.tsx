@@ -61,6 +61,7 @@ const list = () => {
   };
 
   const handleRetailScan = async ({ type, data }: {type: string, data: string}) => {
+    let retailScanResult
     setScanned(true);
     setShowRetailScanner(false);
     
@@ -71,10 +72,17 @@ const list = () => {
       notes: "Added from Phone Scan."
     }
 
-    alert(`Retail Bar code with type ${type} and UPC ${data} has been scanned!`);    
-    let retailScanResult = await addFood({...insertData, source: retailSource, description: retailDescription});
-    console.log(retailScanResult)
+    alert(`Retail Bar code with type ${type} and UPC ${data} has been scanned!`);
+
+    try {
+      retailScanResult = await addFood({...insertData, source: retailSource, description: retailDescription});
+    } catch(err) {
+      console.log(err)
+    }
+    
+    console.log("list.tsx, Line 83: ", retailScanResult)
   }
+
   return (
     <View style={styles.container}>
       {showScanner && <CameraView
