@@ -54,5 +54,9 @@
         "projectId": "9fe94963-d671-496c-9a25-4bb9e642cd2a"
       }
     }
+  },
+  "updates": {
+    "enabled": false,
+    "fallbackToCacheTimeout": 0    
   }
 }
